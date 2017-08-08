@@ -21,7 +21,6 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'lokaltog/vim-powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'dart-lang/dart-vim-plugin'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -94,11 +93,16 @@ au BufNewFile,BufRead *.js, *.html, *.css
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+
+augroup filetypedetect
+	au BufRead,BufNewFile *.html.j2 setfiletype html
+augroup end
+
 colorscheme zenburn
 
 
 "python with virtualenv support
-py << EOF
+py3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:
