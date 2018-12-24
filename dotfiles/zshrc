@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/junaos/.oh-my-zsh
+  export ZSH=/home/jay/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,11 +49,29 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize celery django pip python virtualenv fabric debian)
+plugins=(git 
+    colorize 
+    celery 
+    django 
+    pip 
+    python 
+    virtualenv 
+    fabric 
+    debian 
+    docker 
+    dotenv 
+    ruby
+    archlinux
+    docker-compose
+    solarized-man
+    thefuck
+    zsh-syntax-highlighting
+)
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/dotnet"
+  export DOTNET_ROOT="$HOME/dotnet"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -86,4 +104,3 @@ source $ZSH/oh-my-zsh.sh
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
-eval $(thefuck --alias)
