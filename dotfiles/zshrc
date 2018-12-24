@@ -104,3 +104,6 @@ source $ZSH/oh-my-zsh.sh
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
+eval $(thefuck --alias)
+
+neofetch --config $HOME/.neofetch.rc 
