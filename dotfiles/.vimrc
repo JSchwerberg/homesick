@@ -16,7 +16,6 @@ Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
-Plugin 'jnurmine/Zenburn'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
@@ -24,7 +23,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'lokaltog/vim-powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle "lepture/vim-jinja"
 Plugin 'tmhedberg/SimpylFold'
-
+Plugin 'lifepillar/vim-solarized8'
 
 
 " The following are examples of different formats supported.
@@ -67,7 +66,9 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let python_highlight_all=1
-syntax on
+syntax enable
+set background=dark
+colorscheme solarized8
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDtree
 
@@ -100,8 +101,6 @@ au BufNewFile,BufRead *.js, *.html, *.css
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.html.j2 set ft=jinja
-
-colorscheme zenburn
 
 
 "python with virtualenv support

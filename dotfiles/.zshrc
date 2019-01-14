@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+export ANDROID_HOME=$HOME/Android/Sdk
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -68,11 +70,7 @@ plugins=(git
     zsh-syntax-highlighting
 )
 
-# User configuration
-
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/dotnet"
-  export DOTNET_ROOT="$HOME/dotnet"
-# export MANPATH="/usr/local/man:$MANPATH"
+[ -f ~/.env_vars.sh ] && . ~/.env_vars.sh
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,13 +103,8 @@ bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
 eval $(thefuck --alias)
+eval "$(rbenv init -)"
 
-if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-    ssh-add
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval "$(<~/.ssh-agent-thing)"
-fi
+neofetch --config $HOME/.neofetch.rc
 
-neofetch --config $HOME/.neofetch.rc 
+alias refresh="clear && source ~/.zshrc"
