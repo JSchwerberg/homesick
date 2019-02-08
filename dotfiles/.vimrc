@@ -24,6 +24,9 @@ Plugin 'lokaltog/vim-powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle "lepture/vim-jinja"
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'rking/ag.vim'
 
 
 " The following are examples of different formats supported.
@@ -59,7 +62,11 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this linei
 "
 
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
+set mouse=a
 
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
