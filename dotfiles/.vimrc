@@ -80,6 +80,7 @@ set background=dark
 colorscheme solarized8
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDtree
+let g:NERDTreeChDirMode = 2
 
 set foldmethod=indent
 set foldlevel=99
