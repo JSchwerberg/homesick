@@ -106,5 +106,20 @@ eval $(thefuck --alias)
 eval "$(rbenv init -)"
 
 neofetch --config $HOME/.neofetch.rc
-
 alias refresh="clear && source ~/.zshrc"
+
+# Todoist Aliases
+
+tda () {
+	todoist a --project-id $1 "$@[2,-1]"
+}
+alias tda-work="tda 2149334576"
+
+if [ -f "$INFRA/bash_profile.bash" ]; then source "$INFRA/bash_profile.bash"; fi
+if [ -f "/usr/share/nvm/init-nvm.sh" ]; then source "/usr/share/nvm/init-nvm.sh"; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/jay/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jay/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/jay/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/jay/google-cloud-sdk/completion.zsh.inc'; fi
