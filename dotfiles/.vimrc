@@ -30,39 +30,17 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'vimwiki/vimwiki'
 Plugin 'rust-lang/rust.vim'
 
-" All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this linei
-"
 
 if !has('nvim')
     set ttymouse=xterm2
@@ -70,15 +48,23 @@ endif
 
 set mouse=a
 
+
+syntax enable
+set list
+set showbreak=↪\ 
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <C-n> :NERDTreeToggle<CR>
 let python_highlight_all=1
-syntax enable
+
+
 set background=dark
 colorscheme solarized8
+hi NonText ctermfg=111 guifg=#87afff
+hi SpecialKey ctermfg=111 guifg=#87afff
 
+map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDtree
 let g:NERDTreeChDirMode = 2
 
@@ -86,7 +72,7 @@ set foldmethod=indent
 set foldlevel=99
 set encoding=utf-8
 set nu
-			
+
 nnoremap <space> za
 
 nnoremap <C-J> <C-W><C-J>
