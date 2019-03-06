@@ -123,6 +123,13 @@ alias tda-work="tda 2149334576"
 if [ -f "$INFRA/bash_profile.bash" ]; then source "$INFRA/bash_profile.bash"; fi
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then source "/usr/share/nvm/init-nvm.sh"; fi
 
+if [ -f '/usr/share/todoist/todoist_functions.sh' ]; then . '/usr/share/todoist/todoist_functions.sh'; fi
+
+#if [ -f "$HOME/homesick/check_for_updates.sh" ]; then 
+#	cd "$HOME/homesick"
+#	. "$HOME/homesick/check_for_updates.sh"
+#fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/jay/google-cloud-sdk/path.zsh.inc' ]; then . '/home/jay/google-cloud-sdk/path.zsh.inc'; fi
 
