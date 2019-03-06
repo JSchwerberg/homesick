@@ -68,6 +68,9 @@ plugins=(git
     solarized-man
     thefuck
     zsh-syntax-highlighting
+    # TODO: Remove patch plugin once PR is approved.
+    # https://github.com/robbyrussell/oh-my-zsh/pull/7635
+    colorize-patch
 )
 
 [ -f ~/.env_vars.sh ] && . ~/.env_vars.sh
