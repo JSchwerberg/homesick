@@ -114,7 +114,9 @@ alias refresh="clear && source ~/.zshrc"
 # Todoist Aliases
 
 tda () {
-	todoist a --project-id $1 "$@[2,-1]"
+
+	TASK_TEXT="$@[2,-1]"
+	todoist a --project-id $1 "$TASK_TEXT"
 }
 alias tda-work="tda 2149334576"
 
