@@ -5,7 +5,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
+# Optionally, if you set this to "random", it"ll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="agnoster"
 
@@ -82,9 +82,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR="vim"
 # else
-#   export EDITOR='mvim'
+#   export EDITOR="mvim"
 # fi
 
 # Compilation flags
@@ -123,7 +123,7 @@ alias tda-work="tda 2149334576"
 if [ -f "$INFRA/bash_profile.bash" ]; then source "$INFRA/bash_profile.bash"; fi
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then source "/usr/share/nvm/init-nvm.sh"; fi
 
-if [ -f '/usr/share/todoist/todoist_functions.sh' ]; then . '/usr/share/todoist/todoist_functions.sh'; fi
+if [ -f "/usr/share/todoist/todoist_functions.sh" ]; then . "/usr/share/todoist/todoist_functions.sh"; fi
 
 #if [ -f "$HOME/homesick/check_for_updates.sh" ]; then 
 #	cd "$HOME/homesick"
@@ -131,7 +131,7 @@ if [ -f '/usr/share/todoist/todoist_functions.sh' ]; then . '/usr/share/todoist/
 #fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
