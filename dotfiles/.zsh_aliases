@@ -1,5 +1,6 @@
 alias refresh="clear && source ~/.zshrc"
 alias tda-work="tda 2149334576"
+alias n="nvim"
 
 # Todoist Aliases
 
