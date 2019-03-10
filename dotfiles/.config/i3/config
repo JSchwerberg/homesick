@@ -180,6 +180,7 @@ bar {
 for_window [class="^.*"] border pixel
 gaps inner 10
 
+exec xrdb ~/.Xresources
 exec pasystray
 exec flameshot
 exec blueman-applet
