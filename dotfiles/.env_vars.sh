@@ -1,6 +1,10 @@
 #!/bin/sh
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/dotnet"
+export PATH="$HOME/bin:$PATH"
 export EDITOR="nvim"
 export BROWSER="firefox"
 export ZSH_COLORIZE_STYLE="paraiso-dark"
+export ANDROID_HOME=$HOME/Android/Sdk
+
+[ -f "$HOME/.local/env_vars.sh" ] && . "$HOME/.local/env_vars.sh"
+
