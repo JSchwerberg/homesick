@@ -43,7 +43,6 @@ bindkey "${terminfo[kend]}" end-of-line
 #	. "$HOME/homesick/check_for_updates.sh"
 #fi
 
-if [ -f "$INFRA/bash_profile.bash" ]; then source "$INFRA/bash_profile.bash"; fi
 
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then source "/usr/share/nvm/init-nvm.sh"; fi
 
@@ -57,9 +56,19 @@ if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-clou
 
 [ -f "$HOME/.env_vars.sh" ] && . "$HOME/.env_vars.sh"
 
-[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
 
 eval $(thefuck --alias)
 eval "$(rbenv init -)"
+
+# Aliases now that everything loaded
+[ -f "$HOME/.zsh_aliases" ] && source "$HOME/.zsh_aliases"
+
+# Bash Scripts
+[ -f "$HOME/.scripts/todoist" ] && source "$HOME/.scripts/todoist"
+
+# Machine specific stuff not in source control
+[ -f "$HOME/.local/.zsh_aliases" ] && source "$HOME/.local/.zsh_aliases"
+
+
 
 neofetch 

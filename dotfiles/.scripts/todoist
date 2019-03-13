@@ -1,0 +1,9 @@
+#!/bin/false
+
+tda () {
+
+	TASK_TEXT="$@[2,-1]"
+	todoist a --project-id $1 "$TASK_TEXT"
+}
+
+[ -f "$HOME/.local/todoist" ] && source "$HOME/.local/todoist"
