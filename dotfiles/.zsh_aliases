@@ -1,5 +1,10 @@
-alias refresh="clear && source ~/.zshrc"
+# ZSH Aliases
+alias h="history"
 alias n="nvim"
+alias ref="clear && source ~/.zshrc"
+alias zshrc="$EDITOR ~/.zshrc"
 
-
-
+# Web Aliases
+alias bk="$BROWSER https://www.buildkite.com"
+alias gh="$BROWSER https://www.github.com"
+alias scastie="$BROWSER https://scastie.scala-lang.org"

@@ -9,27 +9,35 @@ export UPDATE_ZSH_DAYS=2
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+if [ "${$(uname -r)#*arch}" != "$(uname -r)" ]; then
+	plugins=(archlinux)
+elif ( [ "${$(uname -r)#*ubuntu}" != "$(uname -r)" ] ||
+	[ "${$(uname -r)#*debian}" != "$(uname -r)" ] ); then
+		plugins=(debian)
+fi
 
-plugins=(git 
-    colorize 
-    celery 
-    django 
-    pip 
-    python 
-    virtualenv 
-    fabric 
-    debian 
-    docker 
-    dotenv 
-    ruby
-    archlinux
+plugins+=(colorize
+    celery
+    debian
+    django
+    docker
     docker-compose
+    dotenv
+    fabric
+    git
+    pip
+    python
+    ruby
     solarized-man
     thefuck
-    zsh-syntax-highlighting
+    virtualenv
+    wd
     # TODO: Remove patch plugin once PR is approved.
     # https://github.com/robbyrussell/oh-my-zsh/pull/7635
     colorize-patch
+    # This is conveniently a Z, so comes last in alphabetical order,
+    # but zsh-syntax-highlighting must be last.
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -38,7 +46,7 @@ bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 
 # TODO: Figure out why update script bounces
-#if [ -f "$HOME/homesick/check_for_updates.sh" ]; then 
+#if [ -f "$HOME/homesick/check_for_updates.sh" ]; then
 #	cd "$HOME/homesick"
 #	. "$HOME/homesick/check_for_updates.sh"
 #fi
@@ -71,4 +79,4 @@ eval "$(rbenv init -)"
 
 
 
-neofetch 
+neofetch
