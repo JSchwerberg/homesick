@@ -32,6 +32,8 @@ Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
 Plugin 'rust-lang/rust.vim'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,6 +74,7 @@ set foldmethod=indent
 set foldlevel=99
 set encoding=utf-8
 set nu
+set expandtab
 
 nnoremap <space> za
 
@@ -93,6 +96,11 @@ au BufNewFile,BufRead *.js, *.html, *.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
+
+au BufNewFile,BufRead *.tf
+    \ set tabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
