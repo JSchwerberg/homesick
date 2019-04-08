@@ -1,4 +1,4 @@
-! Solarized colorscheme for Xresources
+!Solarized colorscheme for Xresources
 ! ====================================
 
 
@@ -14,101 +14,76 @@
 
 
 
-! Define Solarized colors
-! -----------------------
-#define S_base03    #002b36
-#define S_base02    #073642
-#define S_base01    #586e75
-#define S_base00    #657b83
-#define S_base0     #839496
-#define S_base1     #93a1a1
-#define S_base2     #eee8d5
-#define S_base3     #fdf6e3
 
 
 
 
-#define S_yellow    #b58900
-#define S_orange    #cb4b16
-#define S_red       #dc322f
-#define S_magenta   #d33682
-#define S_violet    #6c71c4
-#define S_blue      #268bd2
-#define S_cyan      #2aa198
-#define S_green     #859900
 
 
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
 
 
-#define S_emph      S_base1
-#define S_primary   S_base0
-#define S_secondary S_base01
-#define S_bgrnd_hi  S_base02
-#define S_bgrnd     S_base03
-
-
-
-
-! black dark/light
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+!! black dark/light
 *color0:                S_base02
 *color8:                S_base03
-! red dark/light
+
+!! red dark/light
 *color1:                S_red
 *color9:                S_orange
-! green dark/light
+
+!! green dark/light
 *color2:                S_green
 *color10:               S_base01
-! yellow dark/light
+
+!! yellow dark/light
 *color3:                S_yellow
 *color11:               S_base00
-! blue dark/light
+
+!! blue dark/light
 *color4:                S_blue
 *color12:               S_base0
-! magenta dark/light
+
+!! magenta dark/light
 *color5:                S_magenta
 *color13:               S_violet
-! cyan dark/light
+
+!! cyan dark/light
 *color6:                S_cyan
 *color14:               S_base1
-! white dark/light
+
+!! white dark/light
 *color7:                S_base2
 *color15:               S_base3
-
-
-
-
-
-
-
 
 ! General Xresource settings
 ! ==========================
 !
-#define FONT_REGULAR xft:Hack:style=Regular:size=8 
-#define FONT_BOLD xft:Hack:style=Bold:size=8
-#define FONT_ITALIC xft:Hack:style=Italic:size=8
+#define FONT_REGULAR xft:Hack:pixelsize=10:antialias=true:style=Regular,xft:Symbola 
+#define FONT_BOLD xft:Hack:pixelsize=10:antialias=true:style=Bold,xft:Symbola
+#define FONT_ITALIC xft:Hack:pixelsize=10:antialias=true:slant=italic,xft:Symbola
 Xft*antialias: true
-
-
-
-
-*foreground:                S_primary
-*background:                S_bgrnd
-*Foreground:                S_primary
-*Background:                S_bgrnd
-*cursorColor:               S_emph
-*pointerColorForeground:    S_emph
-*pointerColorBackground:    S_secondary
-*fading:                    40
-*fadeColor:                 S_bgrnd
-
-
-
-
-
-
-
-
 
 ! Xscreensaver
 ! ============
@@ -141,9 +116,6 @@ xscreensaver.passwd.thermometer.foreground: S_red
 xscreensaver.passwd.thermometer.background: S_blue
 xscreensaver.passwd.thermometer.width: 4
 
-
-
-
  
 ! rxvt-unicode terminal
 ! =====================
@@ -163,3 +135,8 @@ URxvt.saveLines: 1000
 URxvt.cursorBlink: true
 URxvt.pointerBlank: true
 URxvt.modifier: alt
+
+xterm*font: FONT_REGULAR
+xterm*boldFont: FONT_BOLD
+xterm*italicFont: FONT_ITALIC
+XTerm*metaSendsEscape: true
