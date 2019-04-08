@@ -3,6 +3,7 @@
 export PATH="$HOME/bin:$PATH"
 export EDITOR="nvim"
 export BROWSER="firefox"
+export TERMINAL="xterm"
 export ZSH_COLORIZE_STYLE="paraiso-dark"
 export ANDROID_HOME=$HOME/Android/Sdk
 
