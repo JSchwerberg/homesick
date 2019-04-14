@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.yarn/bin:$PATH"
 export EDITOR="nvim"
 export BROWSER="firefox"
 export TERMINAL="xterm"
