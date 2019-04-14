@@ -70,6 +70,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDtree
 let g:NERDTreeChDirMode = 2
 
+set scrolloff=999
 set foldmethod=indent
 set foldlevel=99
 set encoding=utf-8
