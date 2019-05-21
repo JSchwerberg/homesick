@@ -27,13 +27,17 @@ plugins+=(colorize
     dotenv
     fabric
     git
+    kubectl
     pip
     python
     ruby
+    scala
     solarized-man
+    terraform
     thefuck
     virtualenv
     wd
+    yarn
     # TODO: Remove patch plugin once PR is approved.
     # https://github.com/robbyrussell/oh-my-zsh/pull/7635
     colorize-patch
@@ -82,3 +86,5 @@ eval "$(rbenv init -)"
 
 
 neofetch
+
+[ -s "/home/jay/.scm_breeze/scm_breeze.sh" ] && source "/home/jay/.scm_breeze/scm_breeze.sh"

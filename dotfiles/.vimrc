@@ -13,7 +13,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/indentpython.vim'
-Bundle 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'nvie/vim-flake8'
@@ -34,6 +33,10 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'rust-lang/rust.vim'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'hashivim/vim-terraform'
+Plugin 'flowtype/vim-flow'
+Plugin 'mrk21/yaml-vim'
+Plugin 'andrewstuart/vim-kubernetes'
+Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,6 +53,8 @@ endif
 
 set mouse=a
 
+let g:deoplete#enable_at_startup = 1
+let g:javascript_plugin_flow = 1
 
 syntax enable
 set list
@@ -85,28 +90,30 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=119
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+    \ setlocal tabstop=4 |
+    \ setlocal softtabstop=4 |
+    \ setlocal shiftwidth=4 |
+    \ setlocal textwidth=119 |
+    \ setlocal expandtab |
+    \ setlocal autoindent |
+    \ setlocal fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au BufNewFile,BufRead *.js,*.html,*.css
+    \ setlocal tabstop=2 |
+    \ setlocal softtabstop=2 |
+    \ setlocal shiftwidth=2
 
 au BufNewFile,BufRead *.tf
-    \ set tabstop=2 |
-    \ set shiftwidth=2 |
-    \ set expandtab
+    \ setlocal tabstop=2 |
+    \ setlocal shiftwidth=2 |
+    \ setlocal expandtab
 
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 au BufNewFile,BufRead *.html.j2 set ft=jinja
 
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 "python with virtualenv support
 py3 << EOF
