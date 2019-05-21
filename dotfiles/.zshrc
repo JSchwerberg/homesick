@@ -83,8 +83,9 @@ eval "$(rbenv init -)"
 # Machine specific stuff not in source control
 [ -f "$HOME/.local/.zsh_aliases" ] && source "$HOME/.local/.zsh_aliases"
 
+[ -s "/home/jay/.scm_breeze/scm_breeze.sh" ] && source "/home/jay/.scm_breeze/scm_breeze.sh"
 
+[ "$(uname -s)" = "Darwin" ] && ulimit -n 65536
 
 neofetch
 
-[ -s "/home/jay/.scm_breeze/scm_breeze.sh" ] && source "/home/jay/.scm_breeze/scm_breeze.sh"
