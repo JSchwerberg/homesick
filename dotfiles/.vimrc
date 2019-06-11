@@ -114,6 +114,7 @@ au BufNewFile,BufRead *.html.j2 set ft=jinja
 
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd BufWritePre * %s/\s\+$//e
 
 "python with virtualenv support
 py3 << EOF
