@@ -37,6 +37,10 @@ Plugin 'flowtype/vim-flow'
 Plugin 'mrk21/yaml-vim'
 Plugin 'andrewstuart/vim-kubernetes'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'fatih/vim-go'
+Plugin 'sebdah/vim-delve'
+Plugin 'vim-airline/vim-airline'
+Plugin 'jvirtanen/vim-hcl'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,7 +62,7 @@ let g:javascript_plugin_flow = 1
 
 syntax enable
 set list
-set showbreak=↪\ 
+set showbreak=↪\
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
 let g:SimpylFold_docstring_preview=1
 let g:ycm_autoclose_preview_window_after_completion=1
