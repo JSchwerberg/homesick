@@ -8,3 +8,9 @@ alias zshrc="$EDITOR ~/.zshrc"
 alias bk="$BROWSER https://www.buildkite.com"
 alias gh="$BROWSER https://www.github.com"
 alias scastie="$BROWSER https://scastie.scala-lang.org"
+
+alias s3do="export AWS_PROFILE=digitalocean"
+
+convert_for_youtube () {
+  ffmpeg -i $1 -c:v libx264 -preset slow -crf 18 -c:a aac -b:a 192k -pix_fmt yuv420p $2
+}

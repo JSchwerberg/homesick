@@ -2,8 +2,8 @@
 
 export PATH="$HOME/bin:$HOME/.yarn/bin:$PATH"
 export EDITOR="nvim"
-export BROWSER="firefox"
-export TERMINAL="xterm"
+export BROWSER="google-chrome-stable"
+export TERMINAL="terminator"
 export ZSH_COLORIZE_STYLE="paraiso-dark"
 export ANDROID_HOME=$HOME/Android/Sdk
 

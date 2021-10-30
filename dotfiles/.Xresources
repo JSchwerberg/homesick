@@ -80,22 +80,23 @@
 ! General Xresource settings
 ! ==========================
 !
-#define FONT_REGULAR xft:Hack:pixelsize=10:antialias=true:style=Regular,xft:Symbola 
-#define FONT_BOLD xft:Hack:pixelsize=10:antialias=true:style=Bold,xft:Symbola
-#define FONT_ITALIC xft:Hack:pixelsize=10:antialias=true:slant=italic,xft:Symbola
+#define FONT_REGULAR xft:Hack Nerd Font:pixelsize=12:antialias=true:style=Regular,xft:
+#define FONT_BOLD xft:Hack Nerd Font:pixelsize=12:antialias=true:style=Bold,xft:Symbola
+#define FONT_ITALIC xft:Hack Nerd Font:pixelsize=12:antialias=true:slant=italic,xft:Symbola
 Xft*antialias: true
 
 ! Xscreensaver
 ! ============
 xscreensaver.captureStderr: false
+xscreensaver.newLoginCommand: dm-tool switch-to-greeter
 !font settings
 xscreensaver.Dialog.headingFont: FONT_REGULAR
-xscreensaver.Dialog.bodyFont:    FONT_REGULAR 
-xscreensaver.Dialog.labelFont:   FONT_REGULAR 
-xscreensaver.Dialog.unameFont:   FONT_REGULAR 
-xscreensaver.Dialog.buttonFont:  FONT_REGULAR 
-xscreensaver.Dialog.dateFont:    FONT_REGULAR 
-xscreensaver.passwd.passwdFont:  FONT_REGULAR 
+xscreensaver.Dialog.bodyFont:    FONT_REGULAR
+xscreensaver.Dialog.labelFont:   FONT_REGULAR
+xscreensaver.Dialog.unameFont:   FONT_REGULAR
+xscreensaver.Dialog.buttonFont:  FONT_REGULAR
+xscreensaver.Dialog.dateFont:    FONT_REGULAR
+xscreensaver.passwd.passwdFont:  FONT_REGULAR
 !general dialog box (affects main hostname, username, password text)
 xscreensaver.Dialog.foreground: S_primary
 xscreensaver.Dialog.background: S_bgrnd
@@ -116,7 +117,7 @@ xscreensaver.passwd.thermometer.foreground: S_red
 xscreensaver.passwd.thermometer.background: S_blue
 xscreensaver.passwd.thermometer.width: 4
 
- 
+
 ! rxvt-unicode terminal
 ! =====================
 !

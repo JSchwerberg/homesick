@@ -2,6 +2,8 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+DEFAULT_USER=$USER
+
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 HYPHEN_INSENSITIVE="true"
@@ -18,16 +20,19 @@ elif ( [ "${$(uname -r)#*ubuntu}" != "$(uname -r)" ] ||
 		plugins=(debian)
 fi
 
-plugins+=(colorize
-    celery
-    debian
-    django
+plugins+=(ansible
+    archlinux
+    colorize
     docker
     docker-compose
+    doctl
     dotenv
-    fabric
+    genpass
     git
+    golang
     kubectl
+    npm
+    nvm
     pip
     python
     ruby
@@ -38,9 +43,6 @@ plugins+=(colorize
     virtualenv
     wd
     yarn
-    # TODO: Remove patch plugin once PR is approved.
-    # https://github.com/robbyrussell/oh-my-zsh/pull/7635
-    colorize-patch
     # This is conveniently a Z, so comes last in alphabetical order,
     # but zsh-syntax-highlighting must be last.
     zsh-syntax-highlighting
@@ -61,12 +63,6 @@ bindkey "${terminfo[kend]}" end-of-line
 if [ -f "/usr/share/nvm/init-nvm.sh" ]; then source "/usr/share/nvm/init-nvm.sh"; fi
 
 if [ -f "/usr/share/todoist/todoist_functions.sh" ]; then . "/usr/share/todoist/todoist_functions.sh"; fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 [ -f "$HOME/.env_vars.sh" ] && . "$HOME/.env_vars.sh"
 
@@ -89,3 +85,11 @@ eval "$(rbenv init -)"
 
 neofetch
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/junaos/google-cloud-sdk/path.zsh.inc' ]; then . '/home/junaos/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/junaos/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/junaos/google-cloud-sdk/completion.zsh.inc'; fi
+
+export PATH=~/go/bin:$PATH
